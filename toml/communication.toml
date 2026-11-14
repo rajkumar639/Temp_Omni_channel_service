@@ -1,0 +1,23 @@
+[sms]
+service_url = "https://k9pmd1.api.infobip.com/sms/3/messages"
+api_key = "568fe07501966a2ad7f0f8d8e693697e-30788099-f964-4fd7-8b6d-d2dece0ff469"
+sms_sender = "447491163443"
+timeout = 30
+enabled = true
+
+[whatsapp]
+service_url = "https://k9pmd1.api.infobip.com/whatsapp/1/message/text"
+api_key = "568fe07501966a2ad7f0f8d8e693697e-30788099-f964-4fd7-8b6d-d2dece0ff469"
+timeout = 30
+enabled = true
+
+[email]
+service_url = "https://email.example.com"
+api_key = "email-api-key"
+timeout = 30
+enabled = true
+smtp_host = "smtp.gmail.com"
+smtp_port = 587
+smtp_user = "chandhruchan3@gmail.com"
+smtp_pass = "ozxrchrauumzatek"
+from_email = "chandhruchan3@gmail.com"

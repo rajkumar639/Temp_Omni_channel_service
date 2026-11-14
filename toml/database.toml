@@ -1,0 +1,8 @@
+[database]
+server   = "localhost"
+port     = 1433
+name     = "mydb"
+user     = "sa"
+password = "YourPassword123"
+timeout  = 30
+encrypt  = false
