@@ -3,15 +3,17 @@ pipeline {
     agent any
 
     stages {
+
         stage('Checkout') {
             steps {
+                checkout scm
                 echo 'GitHub repository connected successfully!'
             }
         }
 
-        stage('Build') {
+        stage('Build WAR') {
             steps {
-                echo 'Build stage started'
+                bat 'mvn clean package'
             }
         }
 
@@ -19,6 +21,28 @@ pipeline {
             steps {
                 echo 'Test stage started'
             }
+        }
+
+        stage('Save WAR') {
+            steps {
+                bat '''
+                    if not exist "D:\\Raj\\Restart\\Chain AMdin Temp\\Omni Build War" (
+                        mkdir "D:\\Raj\\Restart\\Chain AMdin Temp\\Omni Build War"
+                    )
+
+                    copy /Y "target\\*.war" "D:\\Raj\\Restart\\Chain AMdin Temp\\Omni Build War\\"
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'BUILD SUCCESSFUL - WAR file saved!'
+        }
+
+        failure {
+            echo 'BUILD FAILED!'
         }
     }
 }
